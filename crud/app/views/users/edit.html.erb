@@ -1,0 +1,12 @@
+<%= form_with model: @user, local: true do |f| %>
+    <% if @user.errors.any? %>
+        <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+    <% end %>
+    <p>Name:</p> <%= f.text_field :name %>
+    <p>Description:</p> <%= f.text_area :description %>
+    <br><br>
+    <%= f.submit%>
+<% end %>
+
